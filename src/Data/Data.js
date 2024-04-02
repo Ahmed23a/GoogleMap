@@ -1,3 +1,5 @@
+import { calculatePolygonCenter } from "../Utils/utils";
+
 const egypt = ` <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
 <rect width="900" height="600" fill="#000"/>
 <rect width="900" height="200" fill="#fff"/>
@@ -34,15 +36,19 @@ export const Polygons = {
       { lat: 31.1996, lng: 32.9146 },
       { lat: 29.9959, lng: 32.9146 },
       { lat: 29.9959, lng: 29.8618 },
-      { lat: 31.1996, lng: 29.8618 }, // Closing point
+      { lat: 31.1996, lng: 29.8618 },
     ],
+    // img: egypt,
     info: "Hello from Egypt Polygon",
+    name: "Egypt",
     style: {
       fillColor: "#FF0000",
       strokeColor: "Gray",
       strokeWeight: 2,
     },
-    center: { lat: 30.59775, lng: 31.3882 },
+    center: function () {
+      return calculatePolygonCenter(this.position)
+    },
     icon: egyptFlag
   },
   libyaPolygon: {
@@ -51,15 +57,19 @@ export const Polygons = {
       { lat: 29.900000, lng: 15.100000 },
       { lat: 24.500000, lng: 15.100000 },
       { lat: 24.500000, lng: 9.900000 },
-      { lat: 29.900000, lng: 9.900000 }, // Closing point
+      { lat: 29.900000, lng: 9.900000 },
     ],
+    // img: libya,
     info: "Hello from Libya Polygon",
+    name: "Libya",
     style: {
       fillColor: "#00FF00",
       strokeColor: "Yellow",
       strokeWeight: 2,
     },
-    center: { lat: 27.2, lng: 12.5 },
+    center: function () {
+      return calculatePolygonCenter(this.position)
+    },
     icon: libyaFlag
   },
   sudanPolygon: {
@@ -68,15 +78,19 @@ export const Polygons = {
       { lat: 17.0, lng: 38.0 },
       { lat: 8.0, lng: 38.0 },
       { lat: 8.0, lng: 21.0 },
-      { lat: 17.0, lng: 21.0 }, // Closing point
+      { lat: 17.0, lng: 21.0 },
     ],
+    // img: sudan,
     info: "Hello from Sudan Polygon",
+    name: "Sudan",
     style: {
       fillColor: "#0000FF",
-      strokeColor: "bluu",
+      strokeColor: "blue",
       strokeWeight: 2,
     },
-    center: { lat: 12.5, lng: 29.5 },
+    center: function () {
+      return calculatePolygonCenter(this.position)
+    },
     icon: sudanFlag
   },
 };
