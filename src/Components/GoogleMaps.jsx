@@ -29,7 +29,7 @@ export default function GoogleMaps() {
   // Confg
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "You",
+    googleMapsApiKey: "Your API KEY",
   });
 
   const containerStyle = {
